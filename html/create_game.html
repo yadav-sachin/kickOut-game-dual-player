@@ -20,6 +20,8 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
+    <!-- My Scripts -->
+    <script defer src="./../js/create_game.js"></script>
     <title>kickOut - Kick everything out</title>
 </head>
 
@@ -29,19 +31,19 @@
         <div class="row">
             <div class="form-group col-5 mx-auto">
                 <label for="player1">Player1 Name</label>
-                <input type="text" class="form-control" id="player1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="player1" aria-describedby="emailHelp" required>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-5 mx-auto">
                 <label for="player2">Player2 Name</label>
-                <input type="text" class="form-control" id="player2">
+                <input type="text" class="form-control" id="player2" required>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-5 mx-auto">
                 <label for="numRows">Number of Rows in Board</label>
-                <input type="number" class="form-control" id="numRows">
+                <input type="number" class="form-control" id="numRows" max>
             </div>
         </div>
         <div class="row">
