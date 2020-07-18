@@ -1,12 +1,15 @@
 let currPlayer = 1;
 let predictedWinner = 1;
-let numRows = parseInt(prompt('The Number of Rows (less than 10)'));
-while (Number.isNaN(numRows) || numRows < 1 || numRows > 9)
-    numRows = parseInt(prompt('The Number of Rows (less than 10)'));
-let numCols = parseInt(prompt('The Number of Columns (less than 10)'));
-while (Number.isNaN(numRows) || numRows < 1 || numRows > 9)
-    numRows = parseInt(prompt('The Number of Rows (less than 10)'));
-let numPieces = parseInt(prompt('The Number of Pieces'));
+// let numRows = parseInt(prompt('The Number of Rows (less than 10)'));
+// while (Number.isNaN(numRows) || numRows < 1 || numRows > 9)
+//     numRows = parseInt(prompt('The Number of Rows (less than 10)'));
+// let numCols = parseInt(prompt('The Number of Columns (less than 10)'));
+// let numPieces = parseInt(prompt('The Number of Pieces'));
+
+let numRows = localStorage.getItem('numRows');
+let numCols = localStorage.getItem('numCols');
+let numPieces = localStorage.getItem('numTokens');
+console.log(numCols, numRows, numPieces);
 console.log(numRows, numCols);
 let clrs = ['black', 'blue', 'red'];
 
@@ -113,5 +116,3 @@ function declareWinner(currPlayer) {
     alert('Player ' + currPlayer + ' Won the Game');
     location.reload();
 }
-
-
