@@ -1,10 +1,10 @@
-let currPlayer = 1;
+let currPlayer = localStorage.getItem('currPlayer');
 let predictedWinner = 1;
 
 let numRows = parseInt(localStorage.getItem('numRows'));
 let numCols = parseInt(localStorage.getItem('numCols'));
-let numPieces = parseInt(localStorage.getItem('numTokens'));
-console.log(numCols, numRows, numPieces);
+let numTokens = parseInt(localStorage.getItem('numTokens'));
+console.log(numCols, numRows, numTokens);
 let clrs = ['black', 'blue', 'red'];
 let player1 = localStorage.getItem('player1');
 let player2 = localStorage.getItem('player2');
@@ -12,26 +12,8 @@ let player2 = localStorage.getItem('player2');
 //This setups the board grid
 let piece_dimension = 60;
 data = [];
-
-localStorage.setItem('data', JSON.stringify(data));
-for (let i = 1; i <= numRows; ++i) {
-    col_data = [];
-    for (let j = 1; j <= numCols; ++j) {
-        col_data.push({
-            black: 0,
-            blue: 0,
-            red: 0
-        });
-    }
-    data.push(col_data);
-}
-
-for (let i = 1; i <= numPieces; ++i) {
-    let x = Math.floor(Math.random() * numRows) + 1, y = Math.floor(Math.random() * numCols) + 1, clr = Math.floor(Math.random() * 3) + 1;
-    console.log(x, y, clr);
-    data[x - 1][y - 1][clrs[clr - 1]] += 1;
-    localStorage.setItem('data', JSON.stringify(data));
-}
+data = localStorage.getItem('data');
+data = JSON.parse(data);
 
 function placeGamePiece(data, i, j, clr, $cell) {
 
@@ -95,14 +77,19 @@ $(function () {
 
 function deleteGamePiece(i, j, selectedPieceColor) {
     data[i - 1][j - 1][selectedPieceColor] -= 1;
-    localStorage.setItem('data', data);
+    localStorage.setItem('data', JSON.stringify(data));
 }
 
 function addGamePiece(i, j, selectedPieceColor) {
-    if (i > 0 && j > 0)
+    if (i > 0 && j > 0) {
         data[i - 1][j - 1][selectedPieceColor] += 1;
-    else --numPieces;
-    if (numPieces == 0)
+        localStorage.setItem('data', JSON.stringify(data));
+    }
+    else {
+        --numTokens;
+        localStorage.setItem('numTokens', numTokens);
+    }
+    if (numTokens == 0)
         declareWinner(currPlayer);
     setPieces();
     togglePlayerTurn();
@@ -116,8 +103,11 @@ function callWinPredictor() {
 }
 
 function declareWinner(currPlayer) {
-    alert('Player ' + currPlayer + ' Won the Game');
-    location.reload();
+    if (currPlayer == 1)
+        alert(player1 + ' Won the Game');
+    else 
+        alert(player2 + 'Won the Game');
+    window.location.href = "/html/create_game.html";
 }
 
 

@@ -1,8 +1,10 @@
 function togglePlayerTurn() {
     $('.player_' + currPlayer + '_turn').removeClass('active_player');
+    let currPlayer = localStorage.getItem('currPlayer');
     if (currPlayer == 1)
         currPlayer = 2;
     else currPlayer = 1;
+    localStorage.setItem('currPlayer', currPlayer);
     $('.player_' + currPlayer + '_turn').addClass('active_player');
 }
 
