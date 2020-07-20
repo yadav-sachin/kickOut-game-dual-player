@@ -116,8 +116,11 @@ function callWinPredictor() {
 }
 
 function declareWinner(currPlayer) {
-    alert('Player ' + currPlayer + ' Won the Game');
-    location.reload();
+    if (currPlayer == 1)
+        alert(player1 + ' Won the Game');
+    else
+        alert(player2 + ' Won the Game');
+    $('#restartBtn').trigger('click');
 }
 
 

@@ -43,6 +43,7 @@ Some Rules of the Game are as follows
 ## WinPredictor and Hints
 
 - The WinPredictor has been implemented based on the game theory concepts. Check out some of the basic theory here at [Sprague–Grundy theorem - Wikipedia](https://en.wikipedia.org/wiki/Sprague%E2%80%93Grundy_theorem) and [Grundy Numbers](https://en.wikipedia.org/wiki/Nimber).
+- The main game logic for win prediction is written in 'win_predictor.js' in js folder.
 
 
 ## Screenshots
@@ -62,6 +63,6 @@ Some Rules of the Game are as follows
   ![Game 4](screenshots/game1.png)
 
 ## Multiplayer Online Version:
-Really excited to try this game and challenge your friends in online tournaments, Checkout the Multiplayer online version at: [Multiplayer Github Repo](https://github.com/yadav-sachin/kickOut).
+Really excited to try this game and challenge your friends in online tournaments? Checkout the Multiplayer online version at: [Multiplayer Github Repo](https://github.com/yadav-sachin/kickOut).
 
 
