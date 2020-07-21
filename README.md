@@ -7,9 +7,9 @@ Some Rules of the Game are as follows
 
 - The player to delete the last token/piece from the board wins the game.
 - There are three types of pieces:
-  - Black: Moves like a Rook in the chess game. Only difference here is that it can move only left or up, to ensure the finite moves in the game.
-  - Blue: Moves like a Queen in the chess game. Again only difference here is that it can move only left or up or left-up diagnol.
-  - Red: Can move anywhere in the upper-left subarray.
+  - **Black**: Moves like a Rook in the chess game. Only difference here is that it can move only left or up, to ensure the finite moves in the game.
+  - **Blue**: Moves like a Queen in the chess game. Again only difference here is that it can move only left or up or left-up diagnol.
+  - **Red**: Can move anywhere in the upper-left subarray.
 - Along, with moving a piece, any piece has a possibility of being thrown out (removed) of the board in a move.
 
 ## File Structure
